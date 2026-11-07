@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Analizador de Fútbol</title>
+
+<style>
+
+body{margin:0;background:#0b1220;color:white;font-family:Arial,sans-serif}
+
+header{background:#14243a;padding:22px;text-align:center}
+
+h1{font-size:24px;margin:0}
+
+main{padding:18px;max-width:650px;margin:auto}
+
+.card{background:#192b43;border-radius:15px;padding:20px;margin:16px 0}
+
+button{background:#16a34a;color:white;border:0;border-radius:9px;padding:13px;width:100%;font-size:16px}
+
+input{box-sizing:border-box;width:100%;padding:13px;border-radius:8px;border:0;margin:10px 0}
+
+small{color:#aebed1}
+
+.stat{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #34445a}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚽ Analizador de Fútbol</h1>
+
+<small>Estadísticas y análisis de partidos</small>
+
+</header>
+
+<main>
+
+<div class="card">
+
+<h2>Buscar partido</h2>
+
+<input id="partido" placeholder="Ej. Leeds vs Tottenham">
+
+<button onclick="analizar()">Analizar partido</button>
+
+</div>
+
+<div class="card" id="resultado" hidden>
+
+<h2 id="titulo"></h2>
+
+<div class="stat"><span>Últimos 5 partidos</span><span>Próximamente</span></div>
+
+<div class="stat"><span>Historial H2H</span><span>Próximamente</span></div>
+
+<div class="stat"><span>Tabla de posiciones</span><span>Próximamente</span></div>
+
+<div class="stat"><span>Estadísticas en vivo</span><span>Próximamente</span></div>
+
+<div class="stat"><span>Probabilidades</span><span>Próximamente</span></div>
+
+<p><small>Los datos reales se activarán al conectar la API.</small></p>
+
+</div>
+
+</main>
+
+<script>
+
+function analizar(){
+
+const nombre=document.getElementById("partido").value.trim();
+
+if(!nombre){alert("Escribe los equipos");return;}
+
+document.getElementById("titulo").textContent=nombre;
+
+document.getElementById("resultado").hidden=false;
+
+}
+
+</script>
+
+</body>
+
+</html>
